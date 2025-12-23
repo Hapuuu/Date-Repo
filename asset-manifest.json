@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/Valentines-Repo/static/css/main.127d2c81.chunk.css",
-    "main.js": "/Valentines-Repo/static/js/main.c1ac787d.chunk.js",
-    "main.js.map": "/Valentines-Repo/static/js/main.c1ac787d.chunk.js.map",
-    "runtime-main.js": "/Valentines-Repo/static/js/runtime-main.ce4411df.js",
-    "runtime-main.js.map": "/Valentines-Repo/static/js/runtime-main.ce4411df.js.map",
-    "static/js/2.1d00a443.chunk.js": "/Valentines-Repo/static/js/2.1d00a443.chunk.js",
-    "static/js/2.1d00a443.chunk.js.map": "/Valentines-Repo/static/js/2.1d00a443.chunk.js.map",
-    "index.html": "/Valentines-Repo/index.html",
-    "static/css/main.127d2c81.chunk.css.map": "/Valentines-Repo/static/css/main.127d2c81.chunk.css.map",
-    "static/js/2.1d00a443.chunk.js.LICENSE.txt": "/Valentines-Repo/static/js/2.1d00a443.chunk.js.LICENSE.txt"
+    "main.css": "/Date-Repo/static/css/main.c2786d90.css",
+    "main.js": "/Date-Repo/static/js/main.94d662f6.js",
+    "index.html": "/Date-Repo/index.html",
+    "main.c2786d90.css.map": "/Date-Repo/static/css/main.c2786d90.css.map",
+    "main.94d662f6.js.map": "/Date-Repo/static/js/main.94d662f6.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce4411df.js",
-    "static/js/2.1d00a443.chunk.js",
-    "static/css/main.127d2c81.chunk.css",
-    "static/js/main.c1ac787d.chunk.js"
+    "static/css/main.c2786d90.css",
+    "static/js/main.94d662f6.js"
   ]
 }
