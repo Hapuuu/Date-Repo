@@ -12,7 +12,7 @@ function YesButton() {
 
   return (
     <>
-      <Link to="/next">
+      <Link to="/schedule-date">
         <Button
           variant="contained"
           color="primary"

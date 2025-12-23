@@ -5,6 +5,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import Next from "./pages/Next";
 import { RecoilRoot } from "recoil";
+import DateConfigurer from "./components/DateConfigurer";
 
 ReactDOM.render(
   <Router>
@@ -13,6 +14,7 @@ ReactDOM.render(
         <Route exact path="/" component={App} />
         <Route path="/home" component={Home} />
         <Route path="/next" component={Next} />
+        <Route path="/schedule-date" component={DateConfigurer} />
       </RecoilRoot>
     </Switch>
   </Router>,

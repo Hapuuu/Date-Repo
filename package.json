@@ -2,6 +2,7 @@
   "name": "valentine",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hapuuu.github.io/Date-Repo",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -12,12 +13,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "recoil": "^0.7.7"
   },
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "react-scripts build --openssl-legacy-provider",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
