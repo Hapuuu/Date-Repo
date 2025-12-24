@@ -13,13 +13,13 @@ function HomePage() {
     const [showPopup, setShowPopup] = useState(false);
 
     const handleNo = () => {
-        if (noCount < noMessages.length) {
-            setNoCount(noCount + 1);
-            setShowPopup(true);
-            setTimeout(() => setShowPopup(false), 3000);
-        } else {
-            navigate('/pick-date');
-        }
+        navigate('/no-way');
+        // if (noCount < noMessages.length) {
+        //     setNoCount(noCount + 1);
+        //     setShowPopup(true);
+        //     setTimeout(() => setShowPopup(false), 3000);
+        // } else {
+        // }
     };
 
     return (
