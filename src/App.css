@@ -1,19 +1,19 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #F5F8F5;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f8f5;
   color: #333333;
 }
 
 h1,
 h2,
 h3 {
-  font-family: 'Playfair Display', serif;
-  color: #2E8B57;
+  font-family: "Playfair Display", serif;
+  color: #2e8b57;
 }
 
 button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 12px 24px;
   font-size: 18px;
   border: none;
@@ -22,20 +22,24 @@ button {
   transition: all 0.3s;
 }
 
+.btn {
+  width: 265px;
+  height: 68px;
+}
+
 .primary-btn {
-  background-color: #228B22;
+  background-color: #228b22;
   color: white;
 }
 
 .primary-btn:hover {
-  background-color: #1F7020;
+  background-color: #1f7020;
   transform: scale(1.05);
 }
 
 .no-btn {
-  background-color: #D4AF37;
+  background-color: #d4af37;
   color: #333;
-  margin-left: 20px;
 }
 
 .container {
@@ -47,7 +51,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('https://static.vecteezy.com/system/resources/previews/069/208/063/large_2x/minimal-botanical-background-with-soft-green-leaves-and-gentle-bokeh-ideal-for-wellness-spa-or-clean-natural-designs-free-photo.jpg') center/cover no-repeat fixed;
+  background: url("https://static.vecteezy.com/system/resources/previews/069/208/063/large_2x/minimal-botanical-background-with-soft-green-leaves-and-gentle-bokeh-ideal-for-wellness-spa-or-clean-natural-designs-free-photo.jpg")
+    center/cover no-repeat fixed;
 }
 
 /* Glassmorphism Card Style - Liquid/Frosted Glass Effect */
@@ -70,7 +75,7 @@ button {
 
 /* Subtle grain/noise overlay for "liquid" texture */
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -83,17 +88,38 @@ button {
 }
 
 /* Ensure content is above the noise overlay */
-.card>* {
+.card > * {
   position: relative;
   z-index: 2;
 }
 
 /* Optional: Soft inner glow for extra luxury */
 .card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 1px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 27px;
   pointer-events: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: "center";
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .primary-btn {
+    /* margin-bottom: 20px; */
+    margin-right: 0 !important;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+  }
 }
