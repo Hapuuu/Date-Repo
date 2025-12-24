@@ -32,7 +32,7 @@ function ConfirmationPage() {
     );
 
     // ⚠️ REPLACE WITH YOUR ACTUAL PHONE NUMBER (e.g., 94771234567 for Sri Lanka)
-    const YOUR_PHONE_NUMBER = 'YOUR_PHONE_NUMBER_HERE'; // ← CHANGE THIS!
+    const YOUR_PHONE_NUMBER = '+94772265151'; // ← CHANGE THIS!
 
     const whatsappLink = `https://wa.me/${YOUR_PHONE_NUMBER}?text=${message}`;
 

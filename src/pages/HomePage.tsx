@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 
 const noMessages = [
     "Error 404: Rejection not found 😉",
-    "System detecting: You thought it was really nice I came back just for you!",
-    "Rebooting heart... Still says YES! 😄"
+    "system error your heart says yes",
 ];
 
 function HomePage() {
     const navigate = useNavigate();
     const [noCount, setNoCount] = useState(0);
+    console.log("No count: ", noCount)
     const [showPopup, setShowPopup] = useState(false);
 
     const handleNo = () => {
-        if (noCount < noMessages.length - 1) {
+        if (noCount < noMessages.length) {
             setNoCount(noCount + 1);
             setShowPopup(true);
             setTimeout(() => setShowPopup(false), 3000);
@@ -33,7 +33,7 @@ function HomePage() {
                 <h1>Hey Sithushi! ☕🌿</h1>
                 <p style={{ fontSize: '20px', margin: '30px 0' }}>
                     Remember the guy who came back to Spa Ceylon just to thank you...<br />
-                    and ask you out? (My friends abroad LOVED your picks! 👌)
+                    and ask you out?
                 </p>
                 <p style={{ fontSize: '24px', fontWeight: '600' }}>
                     Time for that coffee you said yes to!
@@ -54,12 +54,12 @@ function HomePage() {
                         background: '#D4AF37', color: '#333', padding: '20px', borderRadius: '12px',
                         fontSize: '20px', fontWeight: 'bold', zIndex: 100
                     }}>
-                        {noMessages[noCount]}
+                        {noMessages[noCount - 1]}
                     </div>
                 )}
 
                 <p style={{ marginTop: '60px', fontStyle: 'italic', color: '#666' }}>
-                    Built with extra effort by Thungu ❤️ (the detour guy)
+                    Built with love by Thungu ❤️
                 </p>
             </div>
         </div>

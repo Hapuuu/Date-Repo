@@ -1,0 +1,151 @@
+/* src/pages/DatePickerPage.module.css */
+
+.container {
+    padding: 20px 16px;
+    min-height: 100vh;
+    background-color: #F5F8F5;
+}
+
+.card {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.heroImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #2E8B57;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 48px;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.sectionLabel {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2E8B57;
+    margin-bottom: 20px;
+}
+
+.datepickerWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.activityList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activityItem {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border: 2px solid #C8E6C9;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.activityItemChecked {
+    background: #E8F5E8;
+    box-shadow: 0 8px 20px rgba(34, 139, 34, 0.12);
+}
+
+.checkbox {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
+    accent-color: #228B22;
+    flex-shrink: 0;
+}
+
+.activityLabel {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.proceedButton {
+    font-size: 20px;
+    padding: 18px 48px;
+    border-radius: 30px;
+    min-width: 280px;
+    background-color: #228B22;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(34, 139, 34, 0.25);
+    transition: all 0.3s ease;
+}
+
+.proceedButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.closingNote {
+    margin-top: 48px;
+    font-size: 16px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Professional custom styling for react-datepicker */
+.reactDatepicker {
+    font-family: inherit;
+    border: none !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.reactDatepickerHeader {
+    background-color: #2E8B57 !important;
+    color: white !important;
+    padding: 16px !important;
+}
+
+.reactDatepickerDay,
+.reactDatepickerTimeItem {
+    width: 48px !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    margin: 4px !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+}
+
+.reactDatepickerDaySelected,
+.reactDatepickerTimeItemSelected {
+    background-color: #228B22 !important;
+}
+
+.reactDatepickerDay:hover,
+.reactDatepickerTimeItem:hover {
+    background-color: #E8F5E8 !important;
+}
