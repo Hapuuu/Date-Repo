@@ -60,17 +60,23 @@ const DatePickerPage: React.FC = () => {
         const formattedDateTime = format(selectedDateTime, 'MMMM d, yyyy');
         const formattedTime = format(selectedDateTime, 'h:mm a');
 
-        // Use the beautiful displayed labels
-        const activityTexts = selectedActivities.map((key) => ActivityLabels[key]);
+        // Clean activity labels (remove problematic emojis)
+        const cleanActivityTexts = selectedActivities.map((key) => {
+            return ActivityLabels[key]
+                .replace(/[\u2615\uD83C\uDF33\uD83C\uDF3F\uD83C\uDF89]/g, '') // Removes ☕ 🌳 🌿 🎉
+                .trim(); // Trim each individual string
+        });
 
+        // Build the activities text correctly
         let activitiesText: string;
-        if (activityTexts.length === 1) {
-            activitiesText = activityTexts[0];
+        if (cleanActivityTexts.length === 1) {
+            activitiesText = cleanActivityTexts[0];
         } else {
-            activitiesText = activityTexts.slice(0, -1).join(', ') + ' and ' + activityTexts.slice(-1);
+            const last = cleanActivityTexts[cleanActivityTexts.length - 1];
+            const rest = cleanActivityTexts.slice(0, -1).join(', ');
+            activitiesText = rest + ' and ' + last;
         }
 
-        // Fixed message with proper line breaks and emojis
         const message = `Hey Thungu! This website is SO cute 😍
 
 Let's do ${activitiesText} on ${formattedDateTime} at ${formattedTime}!
@@ -78,15 +84,12 @@ Let's do ${activitiesText} on ${formattedDateTime} at ${formattedTime}!
 Can't wait ❤️
 – Sithushi`;
 
-        // Properly encode — %0A for line breaks, spaces preserved
         const encodedMessage = encodeURIComponent(message);
 
-        // ⚠️ REPLACE WITH YOUR ACTUAL NUMBER (e.g., 94771234567) ⚠️
-        const yourPhoneNumber = '+94772265151';
+        const yourPhoneNumber = '+94772265151'; // e.g., '94771234567'
 
-        const whatsappUrl = `https://wa.me/${yourPhoneNumber}?text=${encodedMessage}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${yourPhoneNumber}&text=${encodedMessage}`;
 
-        // Open WhatsApp
         window.open(whatsappUrl, '_blank');
     };
 
