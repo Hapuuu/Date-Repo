@@ -1,15 +1,58 @@
-.App {
-  background-color: #f8bbd0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-}
-
 body {
   margin: 0;
-  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F5F8F5;
+  color: #333333;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2E8B57;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primary-btn {
+  background-color: #228B22;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #1F7020;
+  transform: scale(1.05);
+}
+
+.no-btn {
+  background-color: #D4AF37;
+  color: #333;
+  margin-left: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('https://static.vecteezy.com/system/resources/previews/069/208/063/large_2x/minimal-botanical-background-with-soft-green-leaves-and-gentle-bokeh-ideal-for-wellness-spa-or-clean-natural-designs-free-photo.jpg') center/cover no-repeat fixed;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}

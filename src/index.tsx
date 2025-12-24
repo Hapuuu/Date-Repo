@@ -1,22 +1,18 @@
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./index.css";
-import App from "./App";
-import Home from "./pages/Home";
-import Next from "./pages/Next";
-import { RecoilRoot } from "recoil";
-import DateConfigurer from "./components/DateConfigurer";
+import React from 'react';
+import { createRoot } from 'react-dom/client';  // Import from 'react-dom/client'
+import App from './App';
+import './index.css';  // If you have this file
 
-ReactDOM.render(
-  <Router>
-    <Switch>
-      <RecoilRoot>
-        <Route exact path="/" component={App} />
-        <Route path="/home" component={Home} />
-        <Route path="/next" component={Next} />
-        <Route path="/schedule-date" component={DateConfigurer} />
-      </RecoilRoot>
-    </Switch>
-  </Router>,
-  document.getElementById("root")
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error('Failed to find the root element');
+}
+
+const root = createRoot(container);
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );

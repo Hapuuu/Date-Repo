@@ -1,13 +1,20 @@
-import { useMediaQuery } from "@material-ui/core";
-import "./App.css";
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import HomePage from './pages/HomePage';
+import DatePickerPage from './pages/DatePickerPage';
+import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
-  const mediaLg = useMediaQuery("(max-width: 1280px)");
   return (
-    <div className="App" style={{ height: mediaLg ? "100%" : "100vh" }}>
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/pick-date" element={<DatePickerPage />} />
+          <Route path="/confirm" element={<ConfirmationPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
