@@ -50,9 +50,50 @@ button {
   background: url('https://static.vecteezy.com/system/resources/previews/069/208/063/large_2x/minimal-botanical-background-with-soft-green-leaves-and-gentle-bokeh-ideal-for-wellness-spa-or-clean-natural-designs-free-photo.jpg') center/cover no-repeat fixed;
 }
 
+/* Glassmorphism Card Style - Liquid/Frosted Glass Effect */
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  /* Semi-transparent white */
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  /* Main frosted blur */
+  -webkit-backdrop-filter: blur(16px);
+  /* Safari support */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  padding: 40px 24px;
+  max-width: 680px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grain/noise overlay for "liquid" texture */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* Ensure content is above the noise overlay */
+.card>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: Soft inner glow for extra luxury */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 27px;
+  pointer-events: none;
 }
