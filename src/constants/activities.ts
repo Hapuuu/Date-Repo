@@ -6,8 +6,9 @@
  */
 export const ActivityLabels = {
     coffee: 'Classic cozy coffee chat ☕',
-    walk: 'Coffee + relaxing nature walk 🌳',
-    spa: 'Coffee + Spa Ceylon-inspired fun 🌿',
+    walk: 'Relaxing nature walk 🌳',
+    beachWalk: 'Walk along the beach 🌊',
+    sunset: 'Watch the sunset together 🌅',
     surprise: 'Surprise me! 🎉',
 } as const;
 

@@ -56,26 +56,14 @@ const DatePickerPage: React.FC = () => {
             return;
         }
 
-        // Format date/time
         const formattedDateTime = format(selectedDateTime, 'MMMM d, yyyy');
         const formattedTime = format(selectedDateTime, 'h:mm a');
 
-        // Clean activity labels (remove problematic emojis)
-        const cleanActivityTexts = selectedActivities.map((key) => {
-            return ActivityLabels[key]
-                .replace(/[\u2615\uD83C\uDF33\uD83C\uDF3F\uD83C\uDF89]/g, '') // Removes ☕ 🌳 🌿 🎉
-                .trim(); // Trim each individual string
-        });
+        const activityTexts = selectedActivities.map(key => ActivityLabels[key]);
 
-        // Build the activities text correctly
-        let activitiesText: string;
-        if (cleanActivityTexts.length === 1) {
-            activitiesText = cleanActivityTexts[0];
-        } else {
-            const last = cleanActivityTexts[cleanActivityTexts.length - 1];
-            const rest = cleanActivityTexts.slice(0, -1).join(', ');
-            activitiesText = rest + ' and ' + last;
-        }
+        let activitiesText = activityTexts.length === 1
+            ? activityTexts[0]
+            : activityTexts.slice(0, -1).join(', ') + ' and ' + activityTexts.slice(-1);
 
         const message = `Hey Thungu! This website is SO cute 😍
 
@@ -126,7 +114,7 @@ Can't wait ❤️
                     {/* Always-visible centered Date & Time Picker (no popper) */}
                     <div style={{ marginBottom: '60px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <div style={{ display: 'block', textAlign: 'center', fontSize: '18px', fontWeight: 600, marginBottom: '24px', color: '#2E8B57', width: '100%' }}>
-                            📅 Date & Time (always open below)
+                            📅 Date & Time
                         </div>
 
                         <div style={{ maxWidth: '380px', width: '100%' }}>
