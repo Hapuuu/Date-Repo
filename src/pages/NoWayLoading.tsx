@@ -25,7 +25,7 @@ function NoWayLoading() {
         } else {
             // Final message, then redirect
             const timer = setTimeout(() => {
-                navigate('/pick-date');
+                navigate('/pick-date', { state: { noAtFirst: true } });
             }, 2200);
             return () => clearTimeout(timer);
         }

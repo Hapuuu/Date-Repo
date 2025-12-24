@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 // MUI v4 imports for DateTime Picker
 import { MuiPickersUtilsProvider, KeyboardDateTimePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
@@ -13,7 +13,8 @@ import { format } from 'date-fns';
  * for selecting date/time and multiple activities for the coffee date invitation.
  */
 const DatePickerPage: React.FC = () => {
-    const navigate = useNavigate();
+    const location = useLocation();
+    const isNoAtFirst = location.state?.noAtFirst === true;
 
     // Combined date + time selection (now using MUI v4)
     const [selectedDateTime, setSelectedDateTime] = useState<Date | null>(new Date());
@@ -65,14 +66,17 @@ const DatePickerPage: React.FC = () => {
             ? activityTexts[0]
             : activityTexts.slice(0, -1).join(', ') + ' and ' + activityTexts.slice(-1);
 
-        const message = `Hey Thungu! This website is SO cute 😍
+        const baseMessage = `Hey Thungu! This website is SO cute 😍
 
 Let's do ${activitiesText} on ${formattedDateTime} at ${formattedTime}!
 
 Can't wait ❤️
 – Sithushi`;
 
-        const encodedMessage = encodeURIComponent(message);
+        const finalMessage = isNoAtFirst
+            ? `I wanted to say no at first... but your effort was too cute to refuse 😍\n\n${baseMessage}`
+            : baseMessage;
+        const encodedMessage = encodeURIComponent(finalMessage);
 
         const yourPhoneNumber = '+94772265151'; // e.g., '94771234567'
 
