@@ -1,10 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-const noMessages = [
-  "Error 404: Rejection not found 😉",
-  "system error your heart says yes",
-];
-
 function HomePage() {
   const navigate = useNavigate();
 
