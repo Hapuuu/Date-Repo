@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.14.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.61",
     "@material-ui/pickers": "^3.3.10",
     "cra-template-typescript": "1.2.0",
     "date-fns": "^2.29.3",
