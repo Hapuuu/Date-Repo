@@ -76,8 +76,6 @@ const DatePickerPage: React.FC = () => {
 
 _Let's do *${activitiesText}* on *${formattedDateTime}* at *${formattedTime}*!_
 
-_Type your message here..._
-
 Can't wait ❤️
 – Sithushi`;
 
